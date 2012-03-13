@@ -1,0 +1,19 @@
+[user]
+    name = Chris Bennett
+    email = chris@mruser.com
+
+[alias]
+    tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    co = checkout
+    ci = commit
+    st = status
+    pom = pull origin master
+    diffc = diff --cached
+    local = log --branches --not --remotes --decorate --oneline --graph
+    undoci = reset --soft HEAD^ 
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+
+[color]
+    ui = true
+

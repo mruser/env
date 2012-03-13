@@ -1,0 +1,9 @@
+Useful Commands
+===============
+
+SSH Keys
+--------
+* `ssh-keygen -lf ~/.ssh/id_dsa.pub`
+
+
+# - vim: syntax=markdown

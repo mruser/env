@@ -1,0 +1,28 @@
+HOWTO virtualenv and pip
+========================
+
+1. `virtualenv .` in site directory, decide whether you want site-packages
+   via argument (no is default)
+2. source bin/activate if your environment allows (also shell func deactivate)
+3. Set pip configuration to only work in a virtualenv
+4. Create a requirements.txt file via `pip freeze -r requirements.txt >
+   requirements.txt` (this method will keep comments and such) or a add packages
+   a priori
+5. `pip install -r requirements.txt` or `pip install foo.pybundle`
+6. `pip bundle foo.pybundle -e requirements.txt`  to create a file for
+   distribute
+
+
+Notes
+-----
+* Upgrade a package: `pip install --upgrade`
+* `pip uninstall` works too
+* I don't see a reason to check-in virtualenv directories, however scripting
+  env creation and population with a pybundle might be good
+* pip supports -e git://git.myproject.org/MyProject.git@master#egg=MyProject
+
+Further reading
+---------------
+* Requirements files: http://www.pip-installer.org/en/latest/requirements.html
+
+# - vim: syntax=markdown

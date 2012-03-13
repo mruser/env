@@ -1,0 +1,42 @@
+ntpdate
+ncurses-term
+sudo
+sysv-rc-conf
+screen
+tmux
+irssi
+pwgen
+iotop
+htop
+git
+lynx
+tcpdump
+zip
+unzip
+sqlite3
+pkg-confi
+exuberant-ctags
+
+# build tools
+build-essential
+libtool
+automake
+uuid-dev
+
+# http
+apache2-mpm-prefork
+apache2-dev
+nginx
+
+# python
+python-dev
+python-pip
+python-virtualenv
+python-bcrypt
+python-imaging
+
+# ruby
+-ruby1.8
+ruby1.9.1
+irb
+rubygems

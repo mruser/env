@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/chris/src/dmthis/app/config'
+let g:netrw_dirhist_2='/home/chris/src/dmthis/app'
+let g:netrw_dirhist_3='/home/chris/.irssi'
+let g:netrw_dirhist_4='/home/chris/src/contrib/node_modules/hubot'
+let g:netrw_dirhist_5='/home/chris/www/crb/kaycee/css/bootstrap'
+let g:netrw_dirhist_6='/home/chris/env/foo/local'
+let g:netrw_dirhist_7='/home/chris/src/pygre/local'
