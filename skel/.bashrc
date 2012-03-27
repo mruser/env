@@ -55,8 +55,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # git-completion.bash required
-if [ -e "~/.git-completion.sh" ]; then
-    source ~/.git-completion.sh
+if [ -e "$HOME/.git-completion.sh" ]; then
+  . "$HOME/.git-completion.sh"
 fi
 
 export GIT_PS1_SHOWUPSTREAM="git"
@@ -110,7 +110,7 @@ alias tmux='tmux -2'
 # preserve env in sudo goddammit
 alias sudo='sudo -E'
 # sudosu gives me environment
-alias sudosu='sudo su -m'
+alias sudosu='sudo su -s'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
