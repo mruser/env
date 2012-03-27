@@ -243,4 +243,16 @@ endfunc
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
 
-colorscheme jellybeans
+" Global clipboard
+set clipboard=unnamed
+
+if $SOLARIZED != ''
+    if $SOLARIZED == 'dark'
+        set background=dark
+    else
+        set background=light
+    endif
+    colorscheme solarized
+else
+    colorscheme jellybeans
+endif
