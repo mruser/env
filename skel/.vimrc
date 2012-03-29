@@ -76,8 +76,10 @@ set smarttab
 
 " let us know where the 80 edge is for herald to 1960s
 " this is a vim 73ism, be prepared to remove
-set colorcolumn=80
-highlight ColorColumn ctermbg=232
+if exists('&colorcolumn')
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=232
+endif
 
 " vfb: No need to save to make a :next :previous, etc.
 " jra: I'd like to save changes only if I really want to., at least until I
