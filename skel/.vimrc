@@ -168,6 +168,7 @@ set cin
 " and break comments at textwidth
 " auto-wrapping disabled, I'll be a big boy
 set formatoptions=cqro
+" test
 set textwidth=80
 
 

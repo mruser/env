@@ -2,19 +2,19 @@ ntpdate
 ncurses-term
 sudo
 sysv-rc-conf
-screen
 tmux
 irssi
 pwgen
 iotop
 htop
 git
+git-core # ubuntu 10.04
 lynx
-tcpdump
+tshark
 zip
 unzip
 sqlite3
-pkg-confi
+pkg-config
 exuberant-ctags
 
 # build tools

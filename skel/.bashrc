@@ -111,6 +111,8 @@ alias tmux='tmux -2'
 alias sudo='sudo -E'
 # sudosu gives me environment
 alias sudosu='sudo su -s'
+# this saves time
+alias 'cd..'='cd ..'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
