@@ -118,21 +118,15 @@ set ttyfast
 set et
 
 " ...except in Makefiles
-autocmd BufRead  [mM]akefile                    set noet
-autocmd BufNewFile [mM]akefile                  set noet
+autocmd BufRead,BufNewFile  [mM]akefile                    setlocal noet
 
 "...or /etc/services
-autocmd BufRead /etc/services                   set noet
-autocmd BufNewFile /etc/services                set noet
+autocmd BufRead,BufNewFile /etc/services                   setlocal noet
 
-" ruby is 2space indents
-au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
-au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
+" ruby, html is 2space indents
+au BufRead,BufNewFile *.rb,*.rhtml,*.html setlocal sw=2 sts=2
 
-autocmd BufNewFile *.txt                       set tw=80
-autocmd BufNewFile *.txt                       set wrap
-autocmd BufRead    *.txt                       set tw=80
-autocmd BufRead    *.txt                       set wrap
+au BufRead,BufNewFile *.txt                       setlocal tw=80 wrap fo+=tan1
 
 " show tabs and trailing chars
 set list
@@ -169,6 +163,7 @@ set cin
 " Automatically insert comment leaders in carriage returns...
 " and break comments at textwidth
 " auto-wrapping disabled, I'll be a big boy
+" see :help fo-table
 set formatoptions=cqro
 " test
 set textwidth=80
