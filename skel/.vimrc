@@ -97,9 +97,6 @@ inoremap <C-e> <End>
 noremap <C-space> <C-b>
 noremap <space> <C-f>
 
-" reset resets search
-nnoremap <C-L> :nohl<CR><C-L>
-
 " functional backspace
 set backspace=indent,eol,start
 
@@ -117,16 +114,20 @@ set ttyfast
 " Tabs are converted to space characters...
 set et
 
+
 " ...except in Makefiles
 autocmd BufRead,BufNewFile  [mM]akefile                    setlocal noet
 
 "...or /etc/services
 autocmd BufRead,BufNewFile /etc/services                   setlocal noet
 
-" ruby, html is 2space indents
-au BufRead,BufNewFile *.rb,*.rhtml,*.html setlocal sw=2 sts=2
+" ruby, html, css is 2space indents
+au BufRead,BufNewFile *.rb,*.rhtml,*.html,*.css,*.scss setlocal sw=2 sts=2
 
-au BufRead,BufNewFile *.txt                       setlocal tw=80 wrap fo+=tan1
+au BufRead,BufNewFile *.txt,*.rst               setlocal sw=2 sts=2 tw=80 wrap fo+=tn1
+
+au VimEnter * if exists(":CoffeeMake") | exe "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!<CR>" | endif
+au VimEnter * if exists(":BClose") | exe "nnoremap <C-w> :Bclose<CR>" | endif  " ...except in Makefiles
 
 " show tabs and trailing chars
 set list
@@ -158,7 +159,7 @@ set background=dark
 set ai
 
 " Turn on smarter autoindents for C code
-set cin
+set cindent
 
 " Automatically insert comment leaders in carriage returns...
 " and break comments at textwidth
@@ -190,6 +191,8 @@ let Tlist_Exist_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 " nerdtree
 let NERDTreeMinimalUI = 1
+let NERDTreeIgnore = ['\.pyc$']
+
 " arrow keys do weird things now
 map <down> <ESC>:bn<RETURN>
 map <left> <ESC>:NERDTreeToggle<RETURN>
@@ -206,7 +209,7 @@ cnoremap <C-e> <End>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-l> <C-w>l :nohl<CR><C-l>
 
 " I'd like to create the directory structure if it isn't there
 augroup BWCCreateDir
@@ -240,6 +243,8 @@ endfunc
 
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
+
+au vimenter * if !argc() | NERDTreeToggle
 
 " Global clipboard
 set clipboard=unnamed
