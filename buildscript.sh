@@ -1,5 +1,5 @@
-echo 'first, select the latest version of ruby'
-sudo update-alternatives --config ruby
+echo 'update hostname'
+edit /etc/hostname
 
 gem install wirble
 

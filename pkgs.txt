@@ -17,6 +17,7 @@ sqlite3
 pkg-config
 exuberant-ctags
 mutt
+firehol
 
 # build tools
 build-essential

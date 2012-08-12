@@ -1,6 +1,7 @@
 .bashrc
 .dircolors-256dark
 .gitconfig
+.hushlogin
 .htoprc
 .ipython
 .irbrc
