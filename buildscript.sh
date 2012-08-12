@@ -16,3 +16,8 @@ bin/vim-ruby-install.rb
 cd -
 rm -rf vim-ruby
 
+
+# apparently debian doesnt come with lastlog set up
+touch /var/log/lastlog
+chgrp adm /var/log/lastlog
+chmod 664 /var/log/lastlog

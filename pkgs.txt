@@ -16,6 +16,7 @@ unzip
 sqlite3
 pkg-config
 exuberant-ctags
+mutt
 
 # build tools
 build-essential
