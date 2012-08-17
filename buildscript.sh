@@ -1,5 +1,11 @@
+adduser chris
+adduser chris www-data
+adduser chris adm
+adduser chris sudo
+
 echo 'update hostname'
 edit /etc/hostname
+hostname -F /etc/hostname
 
 gem install wirble
 
@@ -16,6 +22,10 @@ bin/vim-ruby-install.rb
 cd -
 rm -rf vim-ruby
 
+apt-get remove exim4-base
+apt-get install postfix
+apt-get autoremove
+dpkg --audit
 
 # apparently debian doesnt come with lastlog set up
 touch /var/log/lastlog
