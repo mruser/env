@@ -3,7 +3,17 @@ Useful Commands
 
 SSH Keys
 --------
-* `ssh-keygen -lf ~/.ssh/id_dsa.pub`
+* `ssh-keygen -lf ~/.ssh/id_dsa.pub` - prints key digest
+* `readlink -f <path>` - prints abs path
 
+
+Postgres
+--------
+* `pg_hba.conf` is processed top down and does not passthrough
+
+Pip
+---
+* `pip freeze --local | cut -d = -f 1  | xargs pip install -U` upgrade all
+  packages in local
 
 # - vim: syntax=markdown
