@@ -5,6 +5,7 @@ SSH Keys
 --------
 * `ssh-keygen -lf ~/.ssh/id_dsa.pub` - prints key digest
 * `readlink -f <path>` - prints abs path
+* `xmllint -format -recover` format XML
 
 
 Postgres
