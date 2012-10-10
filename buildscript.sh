@@ -7,6 +7,9 @@ echo 'update hostname'
 edit /etc/hostname
 hostname -F /etc/hostname
 
+echo '/etc/sysctl.conf, uncomment kernel.printk = 3 4 1 3'
+edit /etc/sysctl.conf
+
 gem install wirble
 
 echo 'select TZ'
