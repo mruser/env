@@ -130,6 +130,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# no flow control
+stty -ixon
+
 export EDITOR='vim'
 export RUBYOPT="-r rubygems"
 export PIP_REQUIRE_VIRTUALENV=true
+# I want plsql syntax highlighting when hitting \e in psql
+export PSQL_EDITOR='vim -c "set syntax=plsql"'
