@@ -17,4 +17,9 @@ Pip
 * `pip freeze --local | cut -d = -f 1  | xargs pip install -U` upgrade all
   packages in local
 
+Encfs
+-----
+* `sudo encfs ~/.enc ~/enc -o allow_other` mounting
+* add `user_allow_other` to fuse.conf
+
 # - vim: syntax=markdown
