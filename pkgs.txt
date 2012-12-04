@@ -18,6 +18,7 @@ pkg-config
 exuberant-ctags
 mutt
 firehol
+tree
 
 # build tools
 build-essential

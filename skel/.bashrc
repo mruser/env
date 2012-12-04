@@ -138,3 +138,4 @@ export RUBYOPT="-r rubygems"
 export PIP_REQUIRE_VIRTUALENV=true
 # I want plsql syntax highlighting when hitting \e in psql
 export PSQL_EDITOR='vim -c "set syntax=plsql"'
+export SOLARIZED=light
