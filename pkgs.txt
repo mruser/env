@@ -20,6 +20,7 @@ exuberant-ctags
 mutt
 firehol
 tree
+psmisc
 
 # build tools
 build-essential
