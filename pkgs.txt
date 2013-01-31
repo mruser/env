@@ -1,3 +1,4 @@
+vim
 bash-completion
 ntpdate
 ncurses-term
@@ -21,6 +22,9 @@ mutt
 firehol
 tree
 psmisc
+whois
+patchutils
+sysstat
 
 # build tools
 build-essential

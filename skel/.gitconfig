@@ -10,7 +10,7 @@
     pom = pull origin master
     diffc = diff --cached
     local = log --branches --not --remotes --decorate --oneline --graph
-    undoci = reset --soft HEAD^ 
+    undoci = reset --soft HEAD^
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
 

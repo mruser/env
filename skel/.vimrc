@@ -21,9 +21,11 @@ set shortmess+=Is
 set nowrap
 
 " always switch to the current file directory. I'll probably regret this
-if exists('&autochdir')
-    set autochdir
-endif
+" I did - 20130131
+"if exists('&autochdir')
+"
+"set autochdir
+"endif
 
 "line numbers
 set number
