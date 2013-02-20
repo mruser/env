@@ -25,12 +25,16 @@ psmisc
 whois
 patchutils
 sysstat
+daemontools
+mbuffer
+pv
 
 # build tools
 build-essential
 libtool
 automake
 uuid-dev
+libevent-dev
 
 # http
 apache2-mpm-prefork
