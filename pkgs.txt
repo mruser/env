@@ -28,6 +28,7 @@ sysstat
 daemontools
 mbuffer
 pv
+telnet
 
 # build tools
 build-essential
