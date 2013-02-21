@@ -34,3 +34,6 @@ dpkg --audit
 touch /var/log/lastlog
 chgrp adm /var/log/lastlog
 chmod 664 /var/log/lastlog
+
+# install lesskey
+lesskey skel/lesskey
