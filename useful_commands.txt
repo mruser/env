@@ -22,4 +22,8 @@ Encfs
 * `sudo encfs ~/.enc ~/enc -o allow_other` mounting
 * add `user_allow_other` to fuse.conf
 
+Git completion
+--------------
+* On mac: need to pull copy from debian manually
+
 # - vim: syntax=markdown

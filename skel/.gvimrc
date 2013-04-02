@@ -1,4 +1,4 @@
-set guifont=Monaco:h12
+set guifont=Source\ Code\ Pro:h13
 set background=light
 colorscheme solarized
 " Disable all blinking:

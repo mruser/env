@@ -20,6 +20,7 @@ exuberant-ctags
 mutt
 firehol
 tree
+mailutils
 
 # build tools
 build-essential
