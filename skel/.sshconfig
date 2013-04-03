@@ -1,0 +1,8 @@
+Cipher blowfish
+LogLevel ERROR
+ServerAliveInterval 60
+ServerAliveCountMax 4
+
+#Host <etc>
+#    Hostname <etc>
+#    ProxyCommand ssh -W %h:%p <other>
