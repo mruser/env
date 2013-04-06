@@ -1,4 +1,6 @@
 vim
+zsh
+ack-grep
 bash-completion
 ntpdate
 ncurses-term
