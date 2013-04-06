@@ -126,7 +126,7 @@ autocmd BufRead,BufNewFile  [mM]akefile                    setlocal noet
 autocmd BufRead,BufNewFile /etc/services                   setlocal noet
 
 " ruby, html, css is 2space indents
-au BufRead,BufNewFile *.rb,*.rhtml,*.html,*.css,*.scss setlocal sw=2 sts=2
+au BufRead,BufNewFile *.rb,*.rhtml,*.html,*.xml,*.css,*.scss setlocal sw=2 sts=2
 
 au BufRead,BufNewFile *.txt,*.rst               setlocal sw=2 sts=2 tw=80 wrap fo+=tn1
 

@@ -28,10 +28,15 @@ psmisc
 whois
 patchutils
 sysstat
+dnsutils
 daemontools
 mbuffer
 pv
 telnet
+iftop
+mtr-tiny
+xfsprogs
+debhelper
 
 # build tools
 build-essential
