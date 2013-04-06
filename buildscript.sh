@@ -37,3 +37,7 @@ chmod 664 /var/log/lastlog
 
 # install lesskey
 lesskey skel/lesskey
+
+# need oh-my-zsh for ease
+mkdir -p ~/src/contrib
+git clone git@github.com:robbyrussell/oh-my-zsh.git ~/src/contrib/oh-my-zsh
