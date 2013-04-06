@@ -1,0 +1,5 @@
+#!/bin/zsh
+# virutalenv help
+alias mkvirtualenvhere='mkvirtualenv -a `pwd` -r requirements.txt $(basename `pwd`)'
+
+# use $LS_COLOR_OPTION

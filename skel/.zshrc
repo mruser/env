@@ -1,4 +1,16 @@
 # for interactive shells
+
+# do we have color support
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    COLOR_CAPABILITY=yes
+else
+    COLOR_CAPABILITY=
+fi
+
+# oh-my-zsh
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/src/contrib/oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh
@@ -40,12 +52,26 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# color capability?
+if [ $COLOR_CAPABILITY ]
+then
+  # Find the option for using colors in ls, depending on the version: Linux or BSD
+  ls --color -d . &>/dev/null 2>&1 && LS_COLOR_OPTION='--color=auto' || LS_COLOR_OPTION='-G'
+  alias ls="ls $LS_COLOR_OPTION"
+fi
+
 source $HOME/.aliases
 
 # interactive environment variables
 export EDITOR='vim'
 # I want plsql syntax highlighting when hitting \e in psql
 export PSQL_EDITOR='vim -c "set syntax=plsql"'
+# use my ls colors
+if [ $COLOR_CAPABILITY ]
+then
+    eval $(dircolors ~/.dircolors-256dark)
+    zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"s
+fi
 
 # no flow control in interactive shells
 stty -ixon
