@@ -1,5 +1,29 @@
 #!/bin/zsh
-# virutalenv help
-alias mkvirtualenvhere='mkvirtualenv -a `pwd` -r requirements.txt $(basename `pwd`)'
+
+# this saves time
+alias 'cd..'='cd ..'
+alias pu='pushd'
+alias po='popd'
+
+# bashish
+alias history='fc -l 1'
 
 # use $LS_COLOR_OPTION
+alias sl=ls
+alias lsa="ls $LS_COLOR_OPTION -lah"
+alias l="ls $LS_COLOR_OPTION -lA1"
+alias ll="ls $LS_COLOR_OPTION -l"
+alias la="ls $LS_COLOR_OPTION -lA"
+
+# suppress header info
+alias whois='whois -H'
+# force 256 color mode
+alias tmux='tmux -2'
+# preserve env in sudo goddammit
+alias sudo='sudo -E'
+# sudosu gives me environment
+alias sudosu='sudo su -s'
+# virutalenv help
+alias mkvirtualenvhere='mkvirtualenv -a `pwd` -r requirements.txt $(basename `pwd`)'
+# mac help
+alias routes='netstat -ran'
