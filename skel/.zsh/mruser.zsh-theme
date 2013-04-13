@@ -30,7 +30,7 @@ then
     ZSH_THEME_GIT_PROMPT_SUFFIX=""
     ZSH_THEME_GIT_PROMPT_DIRTY=" x"
     ZSH_THEME_GIT_PROMPT_CLEAN=" o"
-    PROMPT="–% \
+    PROMPT="– % \
 %n@%m:${current_dir}\
 ${git_info} \
 $(virtualenv_info) \
