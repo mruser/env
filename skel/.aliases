@@ -25,6 +25,7 @@ alias sudo='sudo -E'
 alias sudosu='sudo su -s'
 # virutalenv help
 alias mkvirtualenvhere='mkvirtualenv -a `pwd` -r requirements.txt $(basename `pwd`)'
+alias cdw="cd $(cat $VIRTUAL_ENV/$VIRTUALENVWRAPPER_PROJECT_FILENAME)"
 # mac help
 alias routes='netstat -ran'
 # easy vim opener
