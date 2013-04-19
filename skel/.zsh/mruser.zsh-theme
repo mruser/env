@@ -13,7 +13,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
 function virtualenv_info {
     if [ $VIRTUAL_ENV ]
     then
-        local project_root=`cat $VIRTUAL_ENV/.project`
+        local project_root=`cat $VIRTUAL_ENV/$VIRTUALENVWRAPPER_PROJECT_FILENAME`
         local in_project=false
 
         if [[ ${PWD} =~ "$project_root.*$" ]]
