@@ -11,6 +11,8 @@ irssi
 pwgen
 iotop
 htop
+grc
+gnupg
 git
 git-core # ubuntu 10.04
 lynx
