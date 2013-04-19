@@ -54,7 +54,7 @@ then
     PROMPT="– % \
 %n@%m:${current_dir}\
 ${virtualenv_info_prompt}\
-${git_info}\
+${git_info} \
 %! %*
 %(!.#.%%) "
 fi
