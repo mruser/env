@@ -5,3 +5,4 @@ gpg
 GraphicsMagick
 grc
 coreutils
+pgpdump
