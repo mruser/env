@@ -6,14 +6,24 @@
     tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     co = checkout
     ci = commit
-    st = status
+    st = status -s -uno
     pom = pull origin master
     diffc = diff --cached
     local = log --branches --not --remotes --decorate --oneline --graph
     undoci = reset --soft HEAD^
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
+    lsb = "! zsh -c 'for k in $(git branch | sed \"s/^..//\"); do echo -e $(git log -1 --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset\" $k -- )\t $k; done | sort'"
+    lsbr = "! zsh -c 'for k in $(git branch -r | perl -pe \"s/^..(.*?)( ->.*)?$/\\1/\"); do echo -e $(git show --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset\" $k -- | head -n 1)\t $k; done | sort'"
 
 [color]
     ui = true
 
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore
