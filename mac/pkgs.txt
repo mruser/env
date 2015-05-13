@@ -1,3 +1,8 @@
 bash-completion
 htop
 pwgen
+gpg
+GraphicsMagick
+grc
+coreutils
+pgpdump

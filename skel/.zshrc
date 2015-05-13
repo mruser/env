@@ -43,6 +43,10 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+# Ordinarily this auto virtualenvification upon entering a directory would be
+# brilliant. However, the git head implementation is naive to say the least.
+DISABLE_VENV_CD=1
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -56,8 +60,11 @@ source $ZSH/oh-my-zsh.sh
 if [ $COLOR_CAPABILITY ]
 then
   # Find the option for using colors in ls, depending on the version: Linux or BSD
-  ls --color -d . &>/dev/null 2>&1 && LS_COLOR_OPTION='--color=auto' || LS_COLOR_OPTION='-G'
-  alias ls="ls $LS_COLOR_OPTION"
+  lscmd='ls'
+  if [[ -x $(which gls) ]] then lscmd='gls' fi
+  $lscmd --color -d . &>/dev/null 2>&1 && LS_COLOR_OPTION='--color=auto' || LS_COLOR_OPTION='-G'
+  alias ls="$lscmd $LS_COLOR_OPTION"
+  unset lscmd
 fi
 
 source $HOME/.aliases
@@ -66,12 +73,25 @@ source $HOME/.aliases
 export EDITOR='vim'
 # I want plsql syntax highlighting when hitting \e in psql
 export PSQL_EDITOR='vim -c "set syntax=plsql"'
+
 # use my ls colors
 if [ $COLOR_CAPABILITY ]
 then
-    eval $(dircolors ~/.dircolors-256dark)
-    zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"s
+    dircolors_file="$HOME/.dircolors-256dark"
+    execs=(dircolors gdircolors)
+    for exec in $execs
+    do
+        if [[ -x $(which $exec) ]]
+        then
+            eval $($exec $dircolors_file)
+            zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+        fi
+    done
+    unset execs
+    unset dircolors_file
 fi
+
+echo $dircolors_file
 
 # no flow control in interactive shells
 stty -ixon
